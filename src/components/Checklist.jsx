@@ -5,11 +5,12 @@
  * To add: A delete button, and mark all.
  */
 
+import React from "react"; 
 import styled from "styled-components";
 import Header from "./Header";
 import DeleteButton from "./Buttons/DeleteButton";
 import AddTaskButton from "./Buttons/AddTaskButton";
-import useTaskStore from "../store/store"; // Zustand store
+import useStore from "../store/store"; //Zustand
 
 // Wrapper for the Checklist
 
@@ -80,12 +81,20 @@ const InputField = styled.input`
 
 
 const Checklist = () => {
-  const { tasks, toggleTask, removeTask } = useTaskStore(); // Zustand store functions
+  const { tasks, toggleTask, removeTask, addTask, title } = useStore(); // Access tasks and functions
+  const [newTask, setNewTask] = React.useState("");
+
+  const handleAddTask = () => {
+    if (newTask.trim()) {
+      addTask(newTask); // Add new task
+      setNewTask(""); // Clear input field
+    }
+  };
 
   return (
     <Wrapper>
       {/* Heading component */}
-      <Header />
+      <Header title={title} />
 
       {/* Task list */}
       <TaskList>
@@ -107,8 +116,13 @@ const Checklist = () => {
       </TaskList>
 
       {/* Input field and Add Task button */}
-      <InputField type="text" placeholder="Write a task..." />
-      <AddTaskButton />
+      <InputField
+        type="text"
+        value={newTask}
+        onChange={(e) => setNewTask(e.target.value)}
+        placeholder="Write a task..."
+      />
+      <AddTaskButton onClick={handleAddTask}>Add Task</AddTaskButton>
     </Wrapper>
   );
 };
