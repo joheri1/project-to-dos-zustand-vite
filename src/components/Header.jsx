@@ -10,6 +10,7 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledHeader = styled.header`
+  padding: 30px;
   text-align: center;
   font-size: 30px;
   font-weight: 200;

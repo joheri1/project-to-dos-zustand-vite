@@ -2,7 +2,7 @@ import { create } from "zustand";
 
 const useStore = create((set) => ({
   // Title for the Checklist
-  title: "Johanna's Checklist",
+  title: "Project Todo app",
   setTitle: (newTitle) => set({ title: newTitle }),
 
   // Tasks state

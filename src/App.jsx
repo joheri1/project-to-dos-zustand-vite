@@ -5,7 +5,7 @@ export const App = () => {
   return (
     <div>
       <>
-      <Header title="Johanna's checklist"/> {/* Renders the main Header */ }
+      <Header /> {/* Renders the main Header */ }
       <Checklist /> {/* Render the Checklist component */}
       </>
     </div>

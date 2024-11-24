@@ -1,8 +1,9 @@
 /** 
  * This component is a styled component and contains a Checklist.
- * The Checklist contains of a H1 heading, a list of tasks, an input field for adding new tasks, and a add task button. 
  * 
- * To add: A delete button, and mark all.
+ * The Checklist contains of a H2 heading, a list of tasks, an input field for adding new tasks, a delete button and a add task button. 
+ * 
+ * To add: Mark all and task counter.
  */
 
 import React from "react"; 
@@ -15,13 +16,17 @@ import useStore from "../store/store"; //Zustand
 // Wrapper for the Checklist
 
 const Wrapper = styled.div` 
-  padding: 50px;
+  padding: 20px;
   max-width: 500px;
   margin: 0 auto;
   background: white;
   border-radius: 5px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
   position: relative;
+
+  @media (max-width: 768px) {
+    margin: 10px; /* Margin for smaller screens */
+    padding: 15px; /* Padding for smaller screens */
 
   &:before {
     content: "";
@@ -34,6 +39,7 @@ const Wrapper = styled.div`
     right: 10px;
     border-radius: 100px / 10px;
   }
+}
 `;
 
 // List of tasks
@@ -94,7 +100,7 @@ const Checklist = () => {
 
   return (
     <Wrapper>
-      {/* Heading component */}
+      {/* Checklist Heading component */}
       <ChecklistHeader title={title} />
 
       {/* Task list */}

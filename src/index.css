@@ -15,28 +15,12 @@ body {
   color: #454545;
 }
 
-#root {
-  padding-top: 50px; /* Space at the top of the screen */
-}
-
 h1 {
   font-family: Arial, sans-serif;
   text-align: center;
   font-size: 30px;
   font-weight: 200;
   margin: 0;
-}
-h1 i {
-  color: #0eb0b7;
-}
-
-@media (max-width: 1024px) {
-  h1 {
-    font-size: 20px;
-  }
-  h1 i {
-    font-size: 20px;
-  }
 }
 
 /* Old styling, keeping it if I fail with the styled components 
