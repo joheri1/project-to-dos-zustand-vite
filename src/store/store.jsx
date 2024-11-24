@@ -1,12 +1,13 @@
 import { create } from "zustand";
+import data from "../data/data.json"
 
 const useStore = create((set) => ({
+  tasks: data.tasks,
+  // Get task list from JSON
+
   // Title for the Checklist
   title: "Project Todo app",
   setTitle: (newTitle) => set({ title: newTitle }),
-
-  // Tasks state
-  tasks: [], // Initialize with an empty array
 
   // Function to add a new task
   addTask: (text) =>

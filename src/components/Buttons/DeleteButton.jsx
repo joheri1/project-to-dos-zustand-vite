@@ -10,6 +10,7 @@ import styled from "styled-components";
 
 const StyledDeleteButton = styled.span`
   font-size: 18px;
+  padding-left: 20px;
   color: #d8d8d8;
   cursor: pointer;
   opacity: 0;

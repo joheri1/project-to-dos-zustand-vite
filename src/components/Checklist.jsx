@@ -11,6 +11,7 @@ import styled from "styled-components";
 import ChecklistHeader from "./ChecklistHeader";
 import DeleteButton from "./Buttons/DeleteButton";
 import AddTaskButton from "./Buttons/AddTaskButton";
+import data from "../data/data.json"; // Get Title and Descripton from Json
 import useStore from "../store/store"; //Zustand
 
 // Wrapper for the Checklist
@@ -27,6 +28,7 @@ const Wrapper = styled.div`
   @media (max-width: 768px) {
     margin: 10px; /* Margin for smaller screens */
     padding: 15px; /* Padding for smaller screens */
+  }
 
   &:before {
     content: "";
@@ -39,7 +41,6 @@ const Wrapper = styled.div`
     right: 10px;
     border-radius: 100px / 10px;
   }
-}
 `;
 
 // List of tasks
@@ -100,8 +101,8 @@ const Checklist = () => {
 
   return (
     <Wrapper>
-      {/* Checklist Heading component */}
-      <ChecklistHeader title={title} />
+      {/* Checklist Header and Description */}
+      <ChecklistHeader title={data.title} description={data.description} />
 
       {/* Task list */}
       <TaskList>
