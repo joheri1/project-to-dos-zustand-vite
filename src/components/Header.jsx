@@ -10,22 +10,30 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledHeader = styled.header`
-  padding: 30px;
+  padding: 20px;
+  margin-top: 10px;
   text-align: center;
+ 
+  h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 30px;
   font-weight: 200;
   color: #454545;
   margin-bottom: 20px;
+  }
 
   i {
     font-size: 30px;
     color: #0eb0b7;
-    margin-right: 10px;
+    margin-right: 5px;
   }
 
   @media (max-width: 1024px) {
+    h1 {
     font-size: 20px;
-
+    }
     i {
       font-size: 20px;
     }
@@ -35,7 +43,10 @@ const StyledHeader = styled.header`
 const Header = () => {
   return (
     <StyledHeader>
-      <i className="fa fa-check"></i> Johanna's Checklists
+      <h1>
+        <i className="fa fa-check"></i>
+        Johanna's Checklists
+      </h1>
     </StyledHeader>
   );
 };

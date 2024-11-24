@@ -10,12 +10,15 @@
 import React from "react";
 import styled from "styled-components";
 
-const StyledChecklistHeader = styled.h2`
+const StyledChecklistHeader = styled.div`
   text-align: center;
+  margin-bottom: 20px;
+
+  h2 {
   font-size: 30px;
   font-weight: 200;
   color: #454545;
-  margin-bottom: 20px;
+  }
 
   p {
     padding: 20px;
@@ -28,14 +31,19 @@ const StyledChecklistHeader = styled.h2`
   }
 
   @media (max-width: 1024px) {
-    font-size: 20px;
+    h2 {
+      font-size: 24px;
+    }
+    p {
+      font-size: 16px;
+    }
   }
 `;
 
 const ChecklistHeader = ({ title, description }) => {
   return (
     <StyledChecklistHeader>
-      <h1>{title}</h1>
+      <h2>{title}</h2>
       <p>{description}</p>
     </StyledChecklistHeader>
   );
