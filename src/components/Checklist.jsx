@@ -6,6 +6,7 @@
  */
 
 import styled from "styled-components";
+import Header from "./Header";
 
 // Wrapper for the Checklist
 
@@ -28,21 +29,6 @@ const Wrapper = styled.div`
     left: 10px;
     right: 10px;
     border-radius: 100px / 10px;
-  }
-`;
-
-// Heading with checker icon
-const Header = styled.h1`
-  text-align: center;
-  font-size: 30px;
-  font-weight: 200;
-  color: #454545;
-  margin-bottom: 20px;
-
-  i {
-    font-size: 30px;
-    color: #0eb0b7;
-    margin-right: 10px;
   }
 `;
 
@@ -171,11 +157,8 @@ const AddButton = styled.div`
 const Checklist = () => {
   return (
     <Wrapper>
-      {/* Heading with check icon */}
-      <Header>
-        <i className="fa fa-check"></i> Johanna's Checklist
-      </Header>
-
+      {/* Heading component */}
+      <Header />
       {/* Checklist */}
       <TaskList>
         <TaskItem>
