@@ -1,7 +1,7 @@
 /**
  * This component is for the button that deletes tasks from the list. 
  *
- * Includes hover effects.
+ * Includes hover effects for desktop, but for screens smaller than 1024px it's visible by default. 
 */
 
 import styled from "styled-components";
@@ -10,13 +10,16 @@ import styled from "styled-components";
 
 const StyledDeleteButton = styled.span`
   font-size: 18px;
-  color: #cd4400;
+  color: #d8d8d8;
   cursor: pointer;
-  opacity: 0.8;
+  opacity: 0;
   transition: color 0.3s, opacity 0.3s;
+  /*height:36px;
+  width:36px;
+  line-height:36px;*/
 
   &:hover {
-    color: #ff4d4d; // Change color to red on hover
+    color: #cd4400; // Change color to red on hover
     opacity: 1; // Make the button fully visible on hover
   }
 
@@ -24,6 +27,11 @@ const StyledDeleteButton = styled.span`
   &::before {
     content: "✕"; // An "X" symbol
     font-weight: bold;
+  }
+
+  @media (max-width: 1024px) {
+    opacity: 1; // The button is by default visible on tablets and mobile. 
+    color: #cd4400;
   }
 `;
 

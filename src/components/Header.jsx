@@ -12,7 +12,6 @@
 
 import React from "react";
 import styled from "styled-components";
-import useStore from "../store/store";
 
 const StyledHeader = styled.h1`
   text-align: center;
@@ -28,8 +27,7 @@ const StyledHeader = styled.h1`
   }
 `;
 
-const Header = () => {
-  const title = useStore((state) => state.title); // Get title using Zustand store. 
+const Header = ( { title }) => {
 
   return (
     <StyledHeader>

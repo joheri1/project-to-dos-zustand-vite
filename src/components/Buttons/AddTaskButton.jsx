@@ -5,8 +5,8 @@ import styled from "styled-components";
 const StyledAddTaskButton = styled.button`
   margin-top: 20px;
   padding: 0.8rem 1.2rem;
-  background-color: #fd6f00;
-  color: white;
+  background-color: #f8f8f8;
+  color: #4a4a4a;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -19,7 +19,7 @@ const StyledAddTaskButton = styled.button`
   gap: 0.5rem;
 
   &:hover {
-    background-color: #e65c00;
+    color: #3b8c40;
   }
 
   &::before {
@@ -27,6 +27,11 @@ const StyledAddTaskButton = styled.button`
     font-size: 18px;
     font-weight: bold;
     margin-right: 5px;
+  }
+
+  @media (max-width: 1024px) {
+    opacity: 1; // The button is by default visible on tablets and mobile. 
+    color: #3b8c40;
   }
 `;
 

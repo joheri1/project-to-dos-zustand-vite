@@ -33,6 +33,12 @@ Install Styled components:
 npm install styled-components
 ```
 
+Font Awesome:
+
+npm install --save @fortawesome/fontawesome-svg-core
+npm install --save @fortawesome/free-solid-svg-icons
+npm install --save @fortawesome/react-fontawesome
+
 ### Useful resources
 
 [This CodePen](https://codepen.io/joheri1/pen/MWNdRNX) borrowed from [DesignCouch](https://codepen.io/designcouch) 

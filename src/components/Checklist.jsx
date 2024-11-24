@@ -14,7 +14,7 @@ import useStore from "../store/store"; //Zustand
 
 // Wrapper for the Checklist
 
-const Wrapper = styled.div`
+const Wrapper = styled.div` 
   padding: 50px;
   max-width: 500px;
   margin: 0 auto;
@@ -56,8 +56,9 @@ const TaskItem = styled.div`
 
   input[type="checkbox"] {
     margin-right: 10px;
-    accent-color: #0eb0b7; // Modern browsers support this for styling checkboxes
+    accent-color: #0eb0b7; 
   }
+  
 
   label {
     flex-grow: 1;
@@ -119,7 +120,7 @@ const Checklist = () => {
       <InputField
         type="text"
         value={newTask}
-        onChange={(e) => setNewTask(e.target.value)}
+        onChange={(event) => setNewTask(event.target.value)}
         placeholder="Write a task..."
       />
       <AddTaskButton onClick={handleAddTask}>Add Task</AddTaskButton>

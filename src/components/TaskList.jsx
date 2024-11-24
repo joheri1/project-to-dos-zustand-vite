@@ -11,18 +11,21 @@ const TaskListContainer = styled.div`
 const TaskItem = styled.div`
   display: flex; 
   align-items: center; 
-  justify-content: space-between; 
-  padding: 10px 5px; 
-  margin-bottom: 10px;
+  justify-content: space-between;  
+  margin-bottom: 5px;
+  padding: 10px 5px;
   box-shadow: 0 2px 0 -1px #ebebeb;
 
   &:last-of-type {
     box-shadow: none; // Remove shadow for the last task in the list
   }
+  &:hover .delete-button {
+    opacity: 1; // Make button visible on hover
+  }
 `;
 
 // Checkbox styling
-const Checkbox = styled.input.attrs({ type: "checkbox" })`
+const Checkbox = styled.input({ type: "checkbox" })`
   margin-right: 10px;
   accent-color: #0eb0b7; // Change color of the checkbox
 `;
@@ -32,17 +35,8 @@ const TaskLabel = styled.label`
   font-weight: 200;
   position: relative;
   padding-left: 10px;
+  transition: color 0.2s ease-in-out, text-decoration 0.2s ease-in-out;
 
-  // Add a checkmark to completed tasks
-  &::before {
-    content: "✓"; // Unicode for a checkmark
-    position: absolute;
-    left: 0;
-    color: #0eb0b7;
-    font-size: 16px;
-    opacity: ${(props) => (props.checked ? "1" : "0")}; // Show checkmark only if task is completed
-    transition: opacity 0.2s ease-in-out;
-  }
 `;
 
 // TaskList component dynamically renders tasks from the Zustand store
@@ -65,6 +59,7 @@ const TaskList = () => {
           </TaskLabel>
           {/* Delete button to remove the task */}
           <DeleteButton
+            className="delete-button"
             onClick={() => removeTask(task.id)}
             title="Remove Task"
           />
@@ -75,3 +70,4 @@ const TaskList = () => {
 };
 
 export default TaskList;
+
