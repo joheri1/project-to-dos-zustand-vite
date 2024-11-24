@@ -27,9 +27,15 @@ Install Zustand:
 npm i zustand
 ```
 
+Install Styled components: 
+
+```bash
+npm install styled-components
+```
+
 ### Useful resources
 
-[This CodePen](https://codepen.io/joheri1/pen/BaXeEep) and [This CodePen](https://codepen.io/joheri1/pen/MWNdRNX) borrowed from [DesignCouch](https://codepen.io/designcouch) 
+[This CodePen](https://codepen.io/joheri1/pen/MWNdRNX) borrowed from [DesignCouch](https://codepen.io/designcouch) 
 
 ### The Problem
 

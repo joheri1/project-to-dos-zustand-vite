@@ -7,6 +7,9 @@
 
 import styled from "styled-components";
 import Header from "./Header";
+import DeleteButton from "./Buttons/DeleteButton";
+import AddTaskButton from "./Buttons/AddTaskButton";
+import useTaskStore from "../store/store"; // Zustand store
 
 // Wrapper for the Checklist
 
@@ -37,11 +40,12 @@ const TaskList = styled.div`
   margin-top: 1rem;
 `;
 
-// Each Item in the list
+// Each task in the list
 const TaskItem = styled.div`
-  display: block;
-  position: relative;
-  padding-left: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 5px;
   margin-bottom: 10px;
   box-shadow: 0 2px 0 -1px #ebebeb;
 
@@ -50,73 +54,14 @@ const TaskItem = styled.div`
   }
 
   input[type="checkbox"] {
-    position: absolute;
-    height: 0;
-    width: 0;
-    opacity: 0;
+    margin-right: 10px;
+    accent-color: #0eb0b7; // Modern browsers support this for styling checkboxes
   }
 
   label {
-    display: inline-block;
+    flex-grow: 1;
     font-weight: 200;
-    padding: 10px 5px;
-    position: relative;
-
-    &:before {
-      content: "";
-      position: absolute;
-      top: calc(50% + 2px);
-      left: 0;
-      width: 0%;
-      height: 1px;
-      background: #cd4400;
-      transition: 0.25s ease-in-out;
-    }
-
-    &:after {
-      content: "";
-      position: absolute;
-      z-index: 0;
-      height: 18px;
-      width: 18px;
-      top: 9px;
-      left: -25px;
-      box-shadow: inset 0 0 0 2px #d8d8d8;
-      border-radius: 4px;
-      transition: 0.25s ease-in-out;
-    }
-
-    .fa-check {
-      position: absolute;
-      z-index: 1;
-      left: -31px;
-      top: 0;
-      font-size: 1px;
-      line-height: 36px;
-      width: 36px;
-      height: 36px;
-      text-align: center;
-      color: transparent;
-      text-shadow: 1px 1px 0 white, -1px -1px 0 white;
-    }
-  }
-
-  input:checked + label {
-    color: #717171;
-
-    &:before {
-      width: 100%;
-    }
-
-    &:after {
-      box-shadow: inset 0 0 0 2px #0eb0b7;
-    }
-
-    .fa-check {
-      font-size: 20px;
-      line-height: 35px;
-      color: #0eb0b7;
-    }
+    padding-left: 10px;
   }
 `;
 
@@ -133,47 +78,37 @@ const InputField = styled.input`
   border-radius: 4px;
 `;
 
-// Add Task button
-const AddButton = styled.div`
-  margin-top: 20px;
-  padding: 0.8rem 1.2rem;
-  background-color: #fd6f00;
-  color: white;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: 200;
-  transition: 0.25s;
-
-  &:hover {
-    background-color: #e65c00;
-  }
-
-  i {
-    margin-right: 5px;
-  }
-`;
 
 const Checklist = () => {
+  const { tasks, toggleTask, removeTask } = useTaskStore(); // Zustand store functions
+
   return (
     <Wrapper>
       {/* Heading component */}
       <Header />
-      {/* Checklist */}
+
+      {/* Task list */}
       <TaskList>
-        <TaskItem>
-          <input type="checkbox" id="example-task" />
-          <label htmlFor="example-task">
-            <i className="fa fa-check"></i> Do this
-          </label>
-        </TaskItem>
+        {tasks.map((task) => (
+          <TaskItem key={task.id}>
+            <input
+              type="checkbox"
+              id={`task-${task.id}`}
+              checked={task.completed}
+              onChange={() => toggleTask(task.id)} // Toggle completion state
+            />
+            <label htmlFor={`task-${task.id}`}>{task.text}</label>
+            <DeleteButton
+              onClick={() => removeTask(task.id)} // Remove the task
+              title="Delete this task"
+            />
+          </TaskItem>
+        ))}
       </TaskList>
 
-      {/* Input field and Add task button */}
+      {/* Input field and Add Task button */}
       <InputField type="text" placeholder="Write a task..." />
-      <AddButton>
-        <i className="fa fa-plus"></i> Add Task
-      </AddButton>
+      <AddTaskButton />
     </Wrapper>
   );
 };
