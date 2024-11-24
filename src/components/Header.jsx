@@ -1,19 +1,15 @@
-/** 
+/**
+ * Header Component
+ *
+ * This styled component contains the main header for the entire page.
  * 
- * This styled component contains the Header of the Checklist. 
- * 
- * It retrieves the title dynamically from the Zustand store, allowing 
- * the header text to be managed globally across the application.
- * 
- * The children prop allows dynamic text to be passed into the header, making it reusable across different parts of the app.
- * 
- * 
+ * It displays the text with a FontAwesome checkmark icon.
  */
 
 import React from "react";
 import styled from "styled-components";
 
-const StyledHeader = styled.h1`
+const StyledHeader = styled.header`
   text-align: center;
   font-size: 30px;
   font-weight: 200;
@@ -25,13 +21,20 @@ const StyledHeader = styled.h1`
     color: #0eb0b7;
     margin-right: 10px;
   }
+
+  @media (max-width: 1024px) {
+    font-size: 20px;
+
+    i {
+      font-size: 20px;
+    }
+  }
 `;
 
-const Header = ( { title }) => {
-
+const Header = () => {
   return (
     <StyledHeader>
-      <i className="fa fa-check"></i> {title}
+      <i className="fa fa-check"></i> Johanna's Checklists
     </StyledHeader>
   );
 };

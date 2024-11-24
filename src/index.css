@@ -26,9 +26,17 @@ h1 {
   font-weight: 200;
   margin: 0;
 }
-
 h1 i {
   color: #0eb0b7;
+}
+
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 20px;
+  }
+  h1 i {
+    font-size: 20px;
+  }
 }
 
 /* Old styling, keeping it if I fail with the styled components 

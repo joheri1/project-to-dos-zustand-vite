@@ -7,7 +7,7 @@
 
 import React from "react"; 
 import styled from "styled-components";
-import Header from "./Header";
+import ChecklistHeader from "./ChecklistHeader";
 import DeleteButton from "./Buttons/DeleteButton";
 import AddTaskButton from "./Buttons/AddTaskButton";
 import useStore from "../store/store"; //Zustand
@@ -95,7 +95,7 @@ const Checklist = () => {
   return (
     <Wrapper>
       {/* Heading component */}
-      <Header title={title} />
+      <ChecklistHeader title={title} />
 
       {/* Task list */}
       <TaskList>
