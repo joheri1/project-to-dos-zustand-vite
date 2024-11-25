@@ -11,6 +11,7 @@ import styled from "styled-components";
 import ChecklistHeader from "./ChecklistHeader";
 import TaskList from "./TaskList";
 import AddTaskButton from "../Buttons/AddTaskButton";
+import InputField from './InputField';
 import useStore from "../../store/store"; // Zustand
 
 // Wrapper for the Checklist
@@ -40,19 +41,6 @@ const Wrapper = styled.div`
     right: 10px;
     border-radius: 100px / 10px;
   }
-`;
-
-// Input field for adding new tasks to the Checklist
-const InputField = styled.input`
-  border: none;
-  outline: none;
-  font-weight: 200;
-  position: relative;
-  margin-top: 40px;
-  padding: 10px;
-  width: 100%;
-  border: 1px solid #ccc;
-  border-radius: 4px;
 `;
 
 const Checklist = () => {
