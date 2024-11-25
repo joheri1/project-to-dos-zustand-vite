@@ -1,23 +1,23 @@
 import { create } from "zustand";
 import data from "../data/data.json";
 
-const useStore = create((set) => ({
-  // Data from JSON
+export const useStore = create((set) => ({
+  // Import JSON data as the initial state
   title: data.title,
   description: data.description,
   taskTitle: data.taskTitle,
   tasks: data.tasks,
 
-  // Function to add a new task
+  // Add a new task
   addTask: (text) =>
     set((state) => ({
       tasks: [
         ...state.tasks,
-        { id: Date.now(), text, completed: false }, // Add a new task
+        { text, id: crypto.randomUUID(), completed: false },
       ],
     })),
 
-  // Function to toggle task completion
+  // Toggle task completion
   toggleTask: (id) =>
     set((state) => ({
       tasks: state.tasks.map((task) =>
@@ -25,16 +25,11 @@ const useStore = create((set) => ({
       ),
     })),
 
-  // Function to remove a task
+  // Remove a task
   removeTask: (id) =>
     set((state) => ({
-      tasks: state.tasks.filter((task) => task.id !== id), // Remove task by ID
+      tasks: state.tasks.filter((task) => task.id !== id),
     })),
-
-  // Button text handling
-  buttonText: "Add Task", // Initial button text
-  setButtonText: (newText) => set({ buttonText: newText }), // Function to update button text
 }));
 
 export default useStore;
-

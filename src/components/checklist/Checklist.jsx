@@ -56,11 +56,14 @@ const InputField = styled.input`
 `;
 
 const Checklist = () => {
-  const { addTask, title, description } = useStore(); // Endast relevanta funktioner och data
+  // Destructure the data from Zustand store 
+  const { addTask, title, description } = useStore(); 
+  
+  // Stores what the user types in the input field
   const [newTask, setNewTask] = React.useState("");
 
   const handleAddTask = () => {
-    if (newTask.trim()) {
+    if (newTask) {
       addTask(newTask); // Add new task
       setNewTask(""); // Clear input field
     }
