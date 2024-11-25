@@ -1,13 +1,12 @@
 import { create } from "zustand";
-import data from "../data/data.json"
+import data from "../data/data.json";
 
 const useStore = create((set) => ({
+  // Data from JSON
+  title: data.title,
+  description: data.description,
+  taskTitle: data.taskTitle,
   tasks: data.tasks,
-  // Get task list from JSON
-
-  // Title for the Checklist
-  title: "Project Todo app",
-  setTitle: (newTitle) => set({ title: newTitle }),
 
   // Function to add a new task
   addTask: (text) =>
@@ -31,6 +30,10 @@ const useStore = create((set) => ({
     set((state) => ({
       tasks: state.tasks.filter((task) => task.id !== id), // Remove task by ID
     })),
+
+  // Button text handling
+  buttonText: "Add Task", // Initial button text
+  setButtonText: (newText) => set({ buttonText: newText }), // Function to update button text
 }));
 
 export default useStore;

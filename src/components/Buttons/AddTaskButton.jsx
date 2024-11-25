@@ -1,4 +1,9 @@
-import React from "react";
+/** 
+ * This styled component for the Add task button. 
+ * 
+ * The onClick prop lets the parent component define what will happen when the button is clicked.
+ */
+
 import styled from "styled-components";
 
 // Styled component for the Add Task button
@@ -35,9 +40,9 @@ const StyledAddTaskButton = styled.button`
   }
 `;
 
-const AddTaskButton = ({ onClick, children }) => (
+const AddTaskButton = ({ onClick }) => (
   <StyledAddTaskButton onClick={onClick}>
-    {children}
+    Add Task
   </StyledAddTaskButton>
 );
 

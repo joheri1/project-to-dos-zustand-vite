@@ -15,6 +15,10 @@ body {
   color: #454545;
 }
 
+#root {
+  padding-top: 50px; /* Space at the top of the screen */
+}
+
 h1 {
   font-family: Arial, sans-serif;
   text-align: center;

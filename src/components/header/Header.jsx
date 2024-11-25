@@ -18,14 +18,14 @@ const StyledHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 30px;
+  font-size: 40px;
   font-weight: 200;
   color: #454545;
   margin-bottom: 20px;
   }
 
   i {
-    font-size: 30px;
+    font-size: 40px;
     color: #0eb0b7;
     margin-right: 5px;
   }

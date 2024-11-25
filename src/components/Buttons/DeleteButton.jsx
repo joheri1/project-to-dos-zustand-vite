@@ -1,5 +1,7 @@
 /**
  * This component is for the button that deletes tasks from the list. 
+ * 
+ * The onClick prop lets the parent component define what will happen when the button is clicked.
  *
  * Includes hover effects for desktop, but for screens smaller than 1024px it's visible by default. 
 */

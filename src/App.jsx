@@ -1,13 +1,21 @@
-import Checklist from "./components/Checklist" // Import Checklist component
-import Header from "./components/Header";
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./components/pages/Home"
+import PageNotFound from "./components/pages/PageNotFound";
 
-export const App = () => {
+const App = () => {
   return (
-    <div>
-      <>
-      <Header /> {/* Renders the main Header */ }
-      <Checklist /> {/* Render the Checklist component */}
-      </>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        {/* Home */}
+        <Route path="/" element={<Home />} />
+
+        {/* 404-sida */}
+        <Route path="*" element={<PageNotFound />} /> 
+
+      </Routes>
+    </BrowserRouter>
   );
 };
+
+export default App;

@@ -6,13 +6,12 @@
  * To add: Mark all and task counter.
  */
 
-import React from "react"; 
+import React from 'react';
 import styled from "styled-components";
 import ChecklistHeader from "./ChecklistHeader";
-import DeleteButton from "./Buttons/DeleteButton";
-import AddTaskButton from "./Buttons/AddTaskButton";
-import data from "../data/data.json"; // Get Title and Descripton from Json
-import useStore from "../store/store"; //Zustand
+import TaskList from "./TaskList";
+import AddTaskButton from "../Buttons/AddTaskButton";
+import useStore from "../../store/store"; // Zustand
 
 // Wrapper for the Checklist
 
@@ -43,53 +42,21 @@ const Wrapper = styled.div`
   }
 `;
 
-// List of tasks
-const TaskList = styled.div`
-  margin-top: 1rem;
-`;
-
-// Each task in the list
-const TaskItem = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 5px;
-  margin-bottom: 10px;
-  box-shadow: 0 2px 0 -1px #ebebeb;
-
-  &:last-of-type {
-    box-shadow: none;
-  }
-
-  input[type="checkbox"] {
-    margin-right: 10px;
-    accent-color: #0eb0b7; 
-  }
-  
-
-  label {
-    flex-grow: 1;
-    font-weight: 200;
-    padding-left: 10px;
-  }
-`;
-
 // Input field for adding new tasks to the Checklist
 const InputField = styled.input`
   border: none;
   outline: none;
   font-weight: 200;
   position: relative;
-  margin: 0;
+  margin-top: 40px;
   padding: 10px;
   width: 100%;
   border: 1px solid #ccc;
   border-radius: 4px;
 `;
 
-
 const Checklist = () => {
-  const { tasks, toggleTask, removeTask, addTask, title } = useStore(); // Access tasks and functions
+  const { addTask, title, description } = useStore(); // Endast relevanta funktioner och data
   const [newTask, setNewTask] = React.useState("");
 
   const handleAddTask = () => {
@@ -101,31 +68,15 @@ const Checklist = () => {
 
   return (
     <Wrapper>
-      {/* Checklist Header and Description */}
-      <ChecklistHeader title={data.title} description={data.description} />
+      {/* Checklist Header with Description */}
+      <ChecklistHeader title={title} description={description} />
 
       {/* Task list */}
-      <TaskList>
-        {tasks.map((task) => (
-          <TaskItem key={task.id}>
-            <input
-              type="checkbox"
-              id={`task-${task.id}`}
-              checked={task.completed}
-              onChange={() => toggleTask(task.id)} // Toggle completion state
-            />
-            <label htmlFor={`task-${task.id}`}>{task.text}</label>
-            <DeleteButton
-              onClick={() => removeTask(task.id)} // Remove the task
-              title="Delete this task"
-            />
-          </TaskItem>
-        ))}
-      </TaskList>
+      <TaskList /> 
+      {/* TaskList component to show list of tasks */}
 
       {/* Input field and Add Task button */}
       <InputField
-        type="text"
         value={newTask}
         onChange={(event) => setNewTask(event.target.value)}
         placeholder="Write a task..."

@@ -1,6 +1,7 @@
 {
   "title": "Project ToDo List",
   "description": "This week, the task is to build a Todo app using Zustand for state management.",
+  "taskTitle": "Requirements:", 
   "tasks": [
     {
       "id": 1,
