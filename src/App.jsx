@@ -1,19 +1,10 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./components/pages/Home"
-import PageNotFound from "./components/pages/PageNotFound";
+import { BrowserRouter, Routes } from "react-router-dom";
+import appRoutes from "./routes/AppRoutes"; // Import appRoutes
 
 const App = () => {
   return (
     <BrowserRouter>
-      <Routes>
-        {/* Home */}
-        <Route path="/" element={<Home />} />
-
-        {/* 404-sida */}
-        <Route path="*" element={<PageNotFound />} /> 
-
-      </Routes>
+      <Routes>{AppRoutes}</Routes>
     </BrowserRouter>
   );
 };

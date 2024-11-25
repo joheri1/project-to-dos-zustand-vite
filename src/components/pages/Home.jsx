@@ -31,9 +31,14 @@ const Home = () => {
       <Nav>
         <StyledLink to="/about">About</StyledLink>
       </Nav>
+      {/* Header */}
       <Header />
-      <Checklist /> {/* Main page for checklist, the only one I got so far */}
-      <Footer /> {/* Footer */}
+
+      {/* Main page for checklist, the only one I got so far */}
+      <Checklist />
+
+      {/* Footer */}
+      <Footer /> 
     </div>
   );
 };
