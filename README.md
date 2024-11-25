@@ -39,21 +39,19 @@ Install Routes:
 npm install react-router-dom
 ```
 
-Font Awesome:
+Font Awesome:  
 ```bash
-npm install --save @fortawesome/fontawesome-svg-core
-npm install --save @fortawesome/free-solid-svg-icons
-npm install --save @fortawesome/react-fontawesome
-npm install react-router-dom
-```
+npm install --save @fortawesome/fontawesome-svg-core  
+npm install --save @fortawesome/free-solid-svg-icons  
+npm install --save @fortawesome/react-fontawesome  
+```  
 
 ### Useful resources
 
-[This CodePen](https://codepen.io/joheri1/pen/MWNdRNX) borrowed from [DesignCouch](https://codepen.io/designcouch) 
-[One of my previous projects](https://github.com/joheri1/project-movies-vite)
+- [This CodePen](https://codepen.io/joheri1/pen/MWNdRNX) borrowed from [DesignCouch](https://codepen.io/designcouch)   
+- [One of my previous projects](https://github.com/joheri1/project-movies-vite)
 
 ### The Problem
-
 -
 
 ### If I had more time
