@@ -71,7 +71,8 @@ const TaskLabel = styled.label`
 
 // TaskList component dynamically renders tasks from the Zustand store
 const TaskList = () => {
-  const { taskTitle, tasks, toggleTask, removeTask } = useStore(); // Access tasks and actions from Zustand store
+  // Destructure the data from Zustand store 
+  const { taskTitle, tasks, toggleTask, removeTask } = useStore(); 
 
   console.log("Task Title:", taskTitle);
 

@@ -25,8 +25,8 @@ const Wrapper = styled.div`
   position: relative;
 
   @media (max-width: 768px) {
-    margin: 10px; /* Margin for smaller screens */
-    padding: 15px; /* Padding for smaller screens */
+    margin: 10px; 
+    padding: 15px; 
   }
 
   &:before {
@@ -58,7 +58,7 @@ const InputField = styled.input`
 const Checklist = () => {
   // Destructure the data from Zustand store 
   const { addTask, title, description } = useStore(); 
-  
+
   // Stores what the user types in the input field
   const [newTask, setNewTask] = React.useState("");
 
@@ -74,9 +74,8 @@ const Checklist = () => {
       {/* Checklist Header with Description */}
       <ChecklistHeader title={title} description={description} />
 
-      {/* Task list */}
-      <TaskList /> 
       {/* TaskList component to show list of tasks */}
+      <TaskList /> 
 
       {/* Input field and Add Task button */}
       <InputField
