@@ -33,11 +33,19 @@ Install Styled components:
 npm install styled-components
 ```
 
-Font Awesome:
+Install Routes: 
 
+```bash
+npm install react-router-dom
+```
+
+Font Awesome:
+```bash
 npm install --save @fortawesome/fontawesome-svg-core
 npm install --save @fortawesome/free-solid-svg-icons
 npm install --save @fortawesome/react-fontawesome
+npm install react-router-dom
+```
 
 ### Useful resources
 
@@ -46,7 +54,7 @@ npm install --save @fortawesome/react-fontawesome
 
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+-
 
 ### If I had more time
 ## Stretch Goals
@@ -62,7 +70,7 @@ Describe how you approached to problem, and what tools and techniques you used t
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+[Johannas Checklists](https://johannas-checklists.netlify.app/)
 
 ## Instructions
 
