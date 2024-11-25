@@ -2,7 +2,7 @@
  * 
  * This styled component contains the Header of the Checklist. 
  * 
- * The header dynamically displays a title passed as a prop (title).
+ * The header dynamically displays a title passed as a prop (title and description).
  * 
  * 
  */
