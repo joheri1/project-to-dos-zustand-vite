@@ -20,16 +20,29 @@ const CounterWrapper = styled.div`
 const StrongText = styled.span`
   font-weight: bold;
 `;
+const StrongGreenText = styled.span`
+  font-weight: bold;
+  color: #3b8c40; 
+`;
 
 const TaskCounter = () => {
   const tasks = useStore((state) => state.tasks);
   const totalTasks = tasks.length;
   const incompleteTasks = tasks.filter((task) => !task.completed).length;
 
+  // Check if all tasks are completed: 
+  const allTasksDone = totalTasks > 0 && incompleteTasks === 0;
+
   return (
     <CounterWrapper>
-    <StrongText>Completed tasks: </StrongText> {incompleteTasks}/{totalTasks}
-  </CounterWrapper>
+      {allTasksDone ? (
+        <StrongGreenText>Nothing to do here - all tasks are done!</StrongGreenText>
+      ) : (
+        <>
+          <StrongText>Completed tasks: </StrongText> {incompleteTasks}/{totalTasks}
+        </>
+      )}
+    </CounterWrapper>
   );
 };
 
