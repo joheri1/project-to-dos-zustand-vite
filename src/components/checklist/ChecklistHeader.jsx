@@ -4,11 +4,14 @@
  * 
  * The header dynamically displays a title passed as a prop (title and description).
  * 
+ * It displays the TaskCounter Component, and contains a styled component to center the TaskCounter. 
+ * 
  * 
  */
 
 import React from "react";
 import styled from "styled-components";
+import TaskCounter from "./TaskCounter";
 
 const StyledChecklistHeader = styled.div`
   text-align: center;
@@ -40,11 +43,23 @@ const StyledChecklistHeader = styled.div`
   }
 `;
 
+/* styled component to center the counter */
+
+const CenteredCounter = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px; 
+`;
+
 const ChecklistHeader = ({ title, description }) => {
   return (
     <StyledChecklistHeader>
       <h2>{title}</h2>
       <p>{description}</p>
+      <CenteredCounter>
+        <TaskCounter />
+      </CenteredCounter>
     </StyledChecklistHeader>
   );
 };

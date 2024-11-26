@@ -81,6 +81,8 @@ const TaskList = () => {
       {/* Task Title */}
       <TaskTitle>Requirements:</TaskTitle>
 
+       {/* Task counter */}
+
       {tasks.map((task) => (
         <TaskItem key={task.id}>
           {/* Checkbox for toggling task completion */}
