@@ -52,7 +52,7 @@ npm install --save @fortawesome/react-fontawesome
 - [One of my previous projects](https://github.com/joheri1/project-movies-vite)
 
 ### The Problem
--
+- Understanding how to actually use Zustand. I wanted to make my app bigger, with several pages, to make fully use of a Global state management, but time is always a struggle.
 
 ### If I had more time
 ## Stretch Goals
