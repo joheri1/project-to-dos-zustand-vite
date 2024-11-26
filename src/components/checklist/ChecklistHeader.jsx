@@ -27,7 +27,7 @@ const StyledChecklistHeader = styled.div`
     padding: 20px;
     font-size: 16px;
     font-weight: 300;
-    color: #888;
+    color: #454545;
     font-style: italic; 
     margin-top: 0;
     border-bottom: 1px solid;

@@ -19,6 +19,7 @@ const CounterWrapper = styled.div`
 
 const StrongText = styled.span`
   font-weight: bold;
+  color: #454545;
 `;
 const StrongGreenText = styled.span`
   font-weight: bold;
@@ -36,7 +37,7 @@ const TaskCounter = () => {
   return (
     <CounterWrapper>
       {allTasksDone ? (
-        <StrongGreenText>Nothing to do here - all tasks are done!</StrongGreenText>
+        <StrongGreenText>All tasks are done! 🎉 </StrongGreenText>
       ) : (
         <>
           <StrongText>Completed tasks: </StrongText> {incompleteTasks}/{totalTasks}

@@ -23,9 +23,8 @@ const TaskListContainer = styled.div`
 `;
 
 const TaskTitle = styled.p`
-  font-size: 20px;
-  font-weight: bold;
-  color: #333;
+  font-size: 18px;
+  color:#454545;
   padding: 15px 15px 15px 5px;
   margin-bottom: 10px;
   text-align: left;
@@ -66,6 +65,8 @@ const TaskLabel = styled.label`
   font-weight: 200;
   position: relative;
   padding-left: 10px;
+  color: ${(props) => (props.completed ? "#888" : "#454545")};
+  text-decoration: ${(props) => (props.completed ? "line-through" : "none")};
   transition: color 0.2s ease-in-out, text-decoration 0.2s ease-in-out;
 `;
 
@@ -94,7 +95,7 @@ const TaskList = () => {
               onChange={() => toggleTask(task.id)} // Toggle task completion in store
             />
             {/* Label showing the task's text */}
-            <TaskLabel htmlFor={`task-${task.id}`} checked={task.completed}>
+            <TaskLabel htmlFor={`task-${task.id}`} completed={task.completed}>
               {task.text}
             </TaskLabel>
           </TaskContent>
