@@ -40,7 +40,7 @@ const TaskCounter = () => {
         <StrongGreenText>All tasks are done! 🎉 </StrongGreenText>
       ) : (
         <>
-          <StrongText>Completed tasks: </StrongText> {incompleteTasks}/{totalTasks}
+          <StrongText>Pending tasks: </StrongText> {incompleteTasks}/{totalTasks}
         </>
       )}
     </CounterWrapper>
