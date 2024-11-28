@@ -3,15 +3,15 @@
  * 
  * The Checklist contains of a H2 heading, a list of tasks, an input field for adding new tasks, a delete button and a add task button. 
  * 
- * To add: Mark all and task counter.
+ * To add: Mark all.
  */
-
-import React from 'react';
+import React from "react";
 import styled from "styled-components";
 import ChecklistHeader from "./ChecklistHeader";
 import TaskList from "./TaskList";
 import AddTaskButton from "../Buttons/AddTaskButton";
 import InputField from './InputField';
+import { useState } from "react";
 import useStore from "../../store/store"; // Zustand
 
 // Wrapper for the Checklist
@@ -48,7 +48,7 @@ const Checklist = () => {
   const { addTask, title, description } = useStore(); 
 
   // Stores what the user types in the input field
-  const [newTask, setNewTask] = React.useState("");
+  const [newTask, setNewTask] = useState("");
 
   const handleAddTask = () => {
     if (newTask) {
@@ -66,11 +66,11 @@ const Checklist = () => {
       <TaskList /> 
 
       {/* Input field and Add Task button */}
-      <InputField
-        value={newTask}
-        onChange={(event) => setNewTask(event.target.value)}
-        placeholder="Write a task..."
-      />
+        <InputField
+          value={newTask}
+          onChange={(event) => setNewTask(event.target.value)}
+          placeholder="Write a task..."
+          />
       <AddTaskButton onClick={handleAddTask}>Add Task</AddTaskButton>
     </Wrapper>
   );

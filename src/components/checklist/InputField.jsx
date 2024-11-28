@@ -8,7 +8,6 @@
  * 
  * */
 
-import React from "react";
 import styled from "styled-components";
 
 const StyledInputField = styled.input`
@@ -30,7 +29,7 @@ const InputField = ({ value, onChange, placeholder }) => {
       value={value}
       onChange={onChange}
       placeholder={placeholder}
-    />
+      />
   );
 };
 

@@ -6,7 +6,6 @@
  * 
  */
 
-import React from "react";
 import useStore from "../../store/store"; // Zustand
 import styled from "styled-components";
 
