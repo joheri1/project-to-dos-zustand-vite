@@ -8,6 +8,8 @@
 
 The assignment is to build a Todo app using Zustand for state management.
 
+In this project, I aimed to explore Styled Components and refresh my newly acquired skills in using React Router.
+
 ### Dependency Installation & Startup Development Server
 
 This project uses npm (Node Package Manager) to handle its dependencies and run the development server.
@@ -48,11 +50,13 @@ npm install --save @fortawesome/react-fontawesome
 
 ### Useful resources
 
-- [This CodePen](https://codepen.io/joheri1/pen/MWNdRNX) borrowed from [DesignCouch](https://codepen.io/designcouch)   
-- [One of my previous projects](https://github.com/joheri1/project-movies-vite)
+- [This CodePen](https://codepen.io/joheri1/pen/MWNdRNX) originally created by [DesignCouch](https://codepen.io/designcouch), has been adjusted slightly to improve accessibility.    
+- [One of my previous projects:](https://github.com/joheri1/project-movies-vite) A movie browsing app built with React Router, showcasing dynamic routing and API integration.
 
-### The Problem
-- Understanding how to actually use Zustand. I wanted to make my app bigger, with several pages, to make fully use of a Global state management, but time is always a struggle.
+### The Problem  
+- Understanding how to effectively use Zustand. My initial goal was to expand the app with multiple pages to fully leverage global state management, but as always, time was a challenge.   
+- Adding accessible labels to input fields when using Styled Components turned out to be trickier than I thought, since I don't want to display the text. I couldn't find a good solution within the time frame.  
+- Removing import React in the Checklist file caused a cascade of errors, so as a quick workaround before my demo, I decided to leave it where it was needed to avoid breaking the app.   
 
 ### If I had more time
 ## Stretch Goals

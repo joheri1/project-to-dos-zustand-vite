@@ -3,7 +3,6 @@
  * 
  * The Checklist contains of a H2 heading, a list of tasks, an input field for adding new tasks, a delete button and a add task button. 
  * 
- * To add: Mark all.
  */
 import React from "react";
 import styled from "styled-components";
