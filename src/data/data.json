@@ -5,7 +5,7 @@
   "tasks": [
     {
       "id": 1,
-      "text": "The should list all tasks - completed or uncompleted.",
+      "text": "The app should list all tasks - completed or uncompleted.",
       "completed": false
     },
     {
